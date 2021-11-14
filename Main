@@ -1,0 +1,23 @@
+//1. Make a component Named ScrollToTop in root directory of the project.
+//2. Wrap the whole app in the ScrollToTop component as children
+//3. Works like magic.
+
+//4. If you want to scroll to #hashLinks use React-Router-Hash-Link
+
+
+
+
+// ScrollToTop.jsx
+import { useEffect } from "react";
+import { useLocation } from "react-router";
+
+const ScrollToTop = (props) => {
+  const location = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
+
+  return <>{props.children}</>
+};
+
+export default ScrollToTop;
